@@ -33,3 +33,31 @@ Origin: /home/deploy/efcs_webapp/hosts
     "changed": false,
     "ping": "pong"
 }
+2026-07-10 23:46:29,428 p=4503 u=deploy n=ansible INFO| control | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-07-10 23:46:30,516 p=4503 u=deploy n=ansible INFO| srv-mysql-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-07-10 23:56:13,172 p=4474 u=deploy n=ansible INFO| control | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2026-07-10 23:56:14,275 p=4474 u=deploy n=ansible INFO| srv-mysql-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
