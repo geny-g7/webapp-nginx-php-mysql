@@ -31,4 +31,5 @@ ansible -m ping Web
 ansible -m ping all
 ``` 
 **Figure 01 : Test de vérification de connexion au serveur**
-#![Test de connexion](path/to/image)
+![Test de connexion.](img/ansible_ping_test_all.png)
+
