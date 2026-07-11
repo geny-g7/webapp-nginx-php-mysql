@@ -1,0 +1,35 @@
+2026-07-10 22:47:13,997 p=4520 u=deploy n=ansible WARNING| [WARNING]: Failed to parse inventory with 'yaml' plugin: YAML parsing failed: Did not find expected <document start>.
+
+Failed to parse inventory with 'yaml' plugin.
+
+<<< caused by >>>
+
+YAML parsing failed: Did not find expected <document start>.
+Origin: <inventory plugin 'yaml' with source '/home/deploy/efcs_webapp/hosts'>
+
+
+2026-07-10 22:47:13,997 p=4520 u=deploy n=ansible WARNING| [WARNING]: Failed to parse inventory with 'ini' plugin: Failed to parse inventory: Invalid host pattern '---' supplied, '---' is normally a sign this is a YAML file.
+
+Failed to parse inventory with 'ini' plugin.
+
+<<< caused by >>>
+
+Failed to parse inventory: Invalid host pattern '---' supplied, '---' is normally a sign this is a YAML file.
+Origin: /home/deploy/efcs_webapp/hosts
+
+
+2026-07-10 22:47:13,997 p=4520 u=deploy n=ansible WARNING| [WARNING]: Unable to parse /home/deploy/efcs_webapp/hosts as an inventory source
+
+2026-07-10 22:47:13,998 p=4520 u=deploy n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2026-07-10 22:47:14,007 p=4520 u=deploy n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+2026-07-10 22:47:14,008 p=4520 u=deploy n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: Web
+
+2026-07-10 22:50:14,561 p=4552 u=deploy n=ansible INFO| srv-mysql-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.12"
+    },
+    "changed": false,
+    "ping": "pong"
+}
