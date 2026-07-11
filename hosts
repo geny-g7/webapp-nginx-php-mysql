@@ -1,0 +1,8 @@
+# Contenu du fichier d'inventaire 'hosts'...
+
+---
+[Web]
+srv-mysql-1 ansible_host=10.100.2.40
+
+[local]
+control ansible_connection=local
