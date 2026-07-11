@@ -22,3 +22,13 @@ srv-mysql-1 ansible_host=10.100.2.40
 [local]
 control ansible_connection=local
 ``` 
+
+- Les fichiers de configuration ansible étant mis en place, nous allons tester la connexion ssh sans mot-de-passe. Pour ce faire, nous nous servirons du module ping de ansible. La commande que nous utiliserons la commande suivante : <br>
+```bash
+# Tester seulement le noeud 'Web'
+ansible -m ping Web 
+# Tester seulement le noeud 'all'
+ansible -m ping all
+``` 
+**Figure 01 : Test de vérification de connexion au serveur**
+#![Test de connexion](path/to/image)
