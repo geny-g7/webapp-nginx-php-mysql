@@ -78,7 +78,7 @@ nano deploy.yaml
 
 ```
 
-**Figure 02 : Test de vérification des dépendances do Docker**<br>
+**Figure 02 : Test de vérification des dépendances de Docker**<br>
 ![Test des dépendances de Docker.](img/ansible_playbook_docker_dep_test.png)
 
 - <h5>Installation de Docker et Docker-Compose : <h5>
@@ -97,7 +97,7 @@ Une fois les dépendances de Docker mises en place, nous sommes en mesure de pro
 
 ```
 
-**Figure 03 : Test de vérification des dépendances do Docker**<br>
+**Figure 03 : Test d'installation Docker et docker-compose**<br>
 ![Test d'installation de docker et docker-compose.](img/ansible_playbook_docker_ins_test.png)
 
 - <h5>Demarrage de Docker : </h5>
@@ -113,8 +113,8 @@ Les tâches exécutées dans cette partie procèdent au démarrage du service de
 
 ```
 
-**Figure 04 : Test de vérification des dépendances do Docker**<br>
-![Test de démarrage de Docker.](img/ansible_plyabook_docker_str_test.png)
+**Figure 04 : Test de démarrage de Docker**<br>
+![Test de démarrage de Docker.](img/ansible_playbook_docker_str_test.png)
 
 
 Voici le contenu intégral de la version finale du playbook (jusqu'à ce niveau du projet).
