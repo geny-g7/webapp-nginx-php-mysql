@@ -34,9 +34,9 @@ ansible -m ping all
 ![Test de connexion.](img/ansible_ping_test_all.png)
 
 
-2 - <b>Création du playbook Ansible</b>
+2 - <h3>Création du playbook Ansible</h3>
 Pour mettre en place le playbook ansible, nous allons créer un fichier initial nommé 'deploy.yaml'. Dans cette version du fichier, les tâches sont définies en trois groupes : l'installation des dépendances de Docker, l'installation de Docker et Docker-compose et le démarrages de Docker.<br>
-- Installation des dépendances de Docker : <br>
+- <h5>Installation des dépendances de Docker : </h5>
 Comme le nom l'indique, cette partie prend en charge les dépendances de Docker. On notera qu'il y a essentiellement trois tâches dans cette partie. A ce niveau, le contenu du playbook est tel que suit :
 
 ```bash
@@ -77,10 +77,11 @@ nano deploy.yaml
       tags: docker-dep
 
 ```
-**Figure 02 : Test de vérification des dépendances do Docker**<br>
-![Test des dépendances de Docker.](img/Ansible_playbook_docker_dep_test.png)
 
-- Installation de Docker et Docker-Compose : <br>
+**Figure 02 : Test de vérification des dépendances do Docker**<br>
+![Test des dépendances de Docker.](img/ansible_playbook_docker_dep_test.png)
+
+- <h5>Installation de Docker et Docker-Compose : <h5>
 Une fois les dépendances de Docker mises en place, nous sommes en mesure de procéder à l'installation de docker et de docker-compose. Il n'y a qu'une tâche associée à cette partie et le code suivant réprsente la portion du playbook relative à ses activités : <br>
 
 ```bash
@@ -97,9 +98,9 @@ Une fois les dépendances de Docker mises en place, nous sommes en mesure de pro
 ```
 
 **Figure 03 : Test de vérification des dépendances do Docker**<br>
-![Test d'installation de docker et docker-compose.](img/Ansible_playbook_docker_ins_test.png)
+![Test d'installation de docker et docker-compose.](img/ansible_playbook_docker_ins_test.png)
 
-- Demarrage de Docker : <br>
+- <h5>Demarrage de Docker : </h5>
 Les tâches exécutées dans cette partie procèdent au démarrage du service de docker. Au final, nous avons une seule tâche incluse pour prendre en charge cette activité. Voici la portion de code du playbook qui y est associée : <br> 
 
 ```bash
@@ -113,7 +114,7 @@ Les tâches exécutées dans cette partie procèdent au démarrage du service de
 ```
 
 **Figure 04 : Test de vérification des dépendances do Docker**<br>
-![Test de démarrage de Docker.](img/Ansible_plyabook_docker_str_test.png)
+![Test de démarrage de Docker.](img/ansible_plyabook_docker_str_test.png)
 
 
 Voici le contenu intégral de la version finale du playbook (jusqu'à ce niveau du projet).
