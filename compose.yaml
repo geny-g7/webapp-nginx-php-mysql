@@ -1,0 +1,44 @@
+# Contenu du fichier 'compose.yaml'
+
+---
+services:
+
+  proxy:
+    image: nginx:latest
+    build: './efcs_site/'
+    networks:
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    volumes:
+      - ./srv_nginx/conf/default.conf:/etc/conf.d/default.conf
+
+  php:
+    image: php:8.2 FPF
+    build: './php/'
+    networks:
+      - backend
+      - frontend
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./efcs_site/html/:usr/local/nginx/htdocs/
+
+  mysql:
+    image: mysql:latest
+    build: './mysql/'
+    networks:
+      - net_data
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./efcs_site/html/:usr/local/nginx/htdocs/
+
+  volumes:
+    - ./efcs_site/html/:usr/local/nginx/htdocs/
+
+  networks:
+    backend:
+    frontend:
+    net_data:

@@ -171,3 +171,86 @@ Voici le contenu intégral de la version finale du playbook (jusqu'à ce niveau 
 
 ```
 
+<h3>3 - Déploiement du projet avec Docker compose </h3>
+
+<h4>- Mise en place de la structure du projet </h4>
+Le point essentiel dans cette étape consiste à créer le fichier d'orchestration. Mais juste avant, nous allons créer les dossier nécessaires pour mettre en place la structure du projet. Nous nous positionnerons dans le dossier racine du projet : efcs_webapp.C'est d'ailleurs l'espace où a été créé le playbook. Nous allons créer 4 dossiers principaux : 'efcs_site', 'mysql', 'php' et 'srv_nginx'. Un dossier html sera créé à l'intérieur de efcs_site tandis qu'un autre dossier 'conf' sera  à son tour dans srv_nginx. Les commandes à exécuter sont les suivantes : 
+
+```bash
+# Créer le dossier 'html'. <br>Avec le paramètre '-p', le dossier parent (efcs_site) sera créé aussi au cas où il n'existe pas. 
+mkdir -p efcs_site/html
+
+# Créer le dossier 'mysql' dans le dossier courant.
+mkdir mysql
+
+# Créer le dossier 'php' dans le dossier courant.
+mkdir php
+
+# Créer le dossier 'conf' dans le dossier srv_nginx. <br>Avec le paramètre '-p', le dossier parent (srv_nginx) sera créé aussi au cas où il n'existe pas.
+mkdir -p srv_nginx/conf
+
+```
+Plus tard, nous aurons à créer les fichiers 'index.html' et index.php dans le répertoire efcs_site/html/. Nous aurons aussi besoin d'un fichier 'default.conf' dans srv_nginx/conf/ 
+Une fois ces commandes exécutées, nous avons une structure qui ressemble à la figure ci-après.
+
+**Figure 04 : Test de démarrage de Docker**<br>
+![Structure du projet.](img/docker_project_directory_structure.png)
+
+
+<h4>- Création du fichier d'orchestration 'compose.yaml' </h4>
+Maintenant que notre structure est mise en place, nous pourrons poursuivre avec la création du fichier 'compose.ymal'. La version initiale de ce fichier d'orchestration est définie par le contenu suivant.
+
+```bash
+#  Contenu du fichier 'compose.yaml'
+
+---
+services:
+
+  proxy:
+    image: nginx:latest
+    build: './efcs_site/'
+    networks:
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    volumes:
+      - ./srv_nginx/conf/default.conf:/etc/conf.d/default.conf
+
+  php:
+    image: php:8.2 FPF
+    build: './php/'
+    networks:
+      - backend
+      - frontend
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./efcs_site/html/:usr/local/srv_nginx/htdocs/
+
+  mysql:
+    image: mysql:latest
+    build: './mysql/'
+    networks:
+      - net_data
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./efcs_site/html/:usr/local/srv_nginx/htdocs/
+
+  volumes:
+    - ./efcs_site/html/:usr/local/srv_nginx/htdocs/
+
+  networks:
+    backend:
+    frontend:
+    net_data:
+
+```
+
+# <h4>- Configuration de variables d'environnement </h4>
+# <h4>- Modification du fichier /etc/hosts </h4>
+
+
+
+
