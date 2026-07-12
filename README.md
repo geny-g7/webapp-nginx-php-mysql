@@ -193,7 +193,7 @@ mkdir -p srv_nginx/conf
 Plus tard, nous aurons à créer les fichiers 'index.html' et index.php dans le répertoire efcs_site/html/. Nous aurons aussi besoin d'un fichier 'default.conf' dans srv_nginx/conf/ 
 Une fois ces commandes exécutées, nous avons une structure qui ressemble à la figure ci-après.
 
-**Figure 04 : Test de démarrage de Docker**<br>
+**Figure 05 : Présentation de la tructure du projet**<br>
 ![Structure du projet.](img/docker_project_directory_structure.png)
 
 
