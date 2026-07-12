@@ -5,7 +5,7 @@ Ce travail s'effectue dans le contexte d'une évaluation à caractère synthèse
 
 ## Les étapes du projet
 
-1 - <b>Mise en place des fichier préliminaires de Ansible</b>
+<h3>1 - Mise en place des fichier préliminaires de Ansible</h3>
 - Sur notre poste de gestion, nous travaillons avec l'utilisateur 'deploy', conçu à cet effet. Nous avons préparé un répertoire pour le projet (efcs_webapp) dans l'espace de travail de 'deploy' et le dépôt git a été initialisé. Nous y avons ensuite copié un fichier de configuration ansible 'ansible.cfg' que nous avions préalablement placé dans le répertoire home de 'deploy' pour permetre à Ansible de prendre en charge notre répertoire. La copie de ce fichier a été réalisé avec la commande suivante : <br>
 ```bash
 cp ansible.cfg efcs_webapp/
@@ -34,9 +34,9 @@ ansible -m ping all
 ![Test de connexion.](img/ansible_ping_test_all.png)
 
 
-2 - <h3>Création du playbook Ansible</h3>
+<h3>2 - Création du playbook Ansible</h3>
 Pour mettre en place le playbook ansible, nous allons créer un fichier initial nommé 'deploy.yaml'. Dans cette version du fichier, les tâches sont définies en trois groupes : l'installation des dépendances de Docker, l'installation de Docker et Docker-compose et le démarrages de Docker.<br>
-- <h5>Installation des dépendances de Docker : </h5>
+- <h4>Installation des dépendances de Docker : </h4>
 Comme le nom l'indique, cette partie prend en charge les dépendances de Docker. On notera qu'il y a essentiellement trois tâches dans cette partie. A ce niveau, le contenu du playbook est tel que suit :
 
 ```bash
@@ -81,7 +81,7 @@ nano deploy.yaml
 **Figure 02 : Test de vérification des dépendances de Docker**<br>
 ![Test des dépendances de Docker.](img/ansible_playbook_docker_dep_test.png)
 
-- <h5>Installation de Docker et Docker-Compose : <h5>
+- <h4>Installation de Docker et Docker-Compose : <h4>
 Une fois les dépendances de Docker mises en place, nous sommes en mesure de procéder à l'installation de docker et de docker-compose. Il n'y a qu'une tâche associée à cette partie et le code suivant réprsente la portion du playbook relative à ses activités : <br>
 
 ```bash
@@ -100,7 +100,7 @@ Une fois les dépendances de Docker mises en place, nous sommes en mesure de pro
 **Figure 03 : Test d'installation Docker et docker-compose**<br>
 ![Test d'installation de docker et docker-compose.](img/ansible_playbook_docker_ins_test.png)
 
-- <h5>Demarrage de Docker : </h5>
+- <h4>Demarrage de Docker : </h4>
 Les tâches exécutées dans cette partie procèdent au démarrage du service de docker. Au final, nous avons une seule tâche incluse pour prendre en charge cette activité. Voici la portion de code du playbook qui y est associée : <br> 
 
 ```bash
