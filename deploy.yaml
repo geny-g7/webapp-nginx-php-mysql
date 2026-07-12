@@ -4,8 +4,11 @@
 
 ---
 - name: "NGinx, PHP et MySqL installation avec Docker"
-  hosts: prod
-  pre_tasks:
+  hosts: Web
+  become: true
+  vars:
+    ansible_sudo_pass: "egeorges*1"
+  tasks:
     - name: INSTALLER LES DEPENDANCES DOCKER
       apt:
         name:
@@ -15,29 +18,31 @@
           - software-properties-common
         state: present
         update_cache: yes
-      tags: docker
+      tags: docker-dep
 
     - name: AJOUT CLE GPG DE DOCKER
       apt_key:
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
-      tags: docker
+      tags: docker-dep
 
     - name: AJOUT DEPOT APT DE DOCKER
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
         state: present
-      tags: docker
+      tags: docker-dep
 
-    - name: INSTALLER DOCKER
+    - name: INSTALL DOCKER / DOCKER-COMPOSE
       apt:
-        name: docker-ce
+        name:
+          - docker-ce
+          - docker-compose-plugin
         state: present
         update_cache: yes
-      tags: docker
+      tags: docker-ins
 
-    - name: DEMARRE DOCKER
+    - name: DEMARRER DOCKER
       ansible.builtin.systemd_service:
         state: started
         name: docker
-      tags: docker
+      tags: docker-str

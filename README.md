@@ -33,7 +33,8 @@ ansible -m ping all
 **Figure 01 : Test de vérification de connexion au serveur**<br>
 ![Test de connexion.](img/ansible_ping_test_all.png)
 
-###2 - <b>Création du playbook Ansible</b>
+
+2 - <b>Création du playbook Ansible</b>
 Pour mettre en place le playbook ansible, nous allons créer un fichier initial nommé 'deploy.yaml'. Dans cette version du fichier, les tâches sont définies en trois groupes : l'installation des dépendances de Docker, l'installation de Docker et Docker-compose et le démarrages de Docker.<br>
 - Installation des dépendances de Docker : <br>
 Comme le nom l'indique, cette partie prend en charge les dépendances de Docker. On notera qu'il y a essentiellement trois tâches dans cette partie. A ce niveau, le contenu du playbook est tel que suit :
@@ -103,7 +104,7 @@ Les tâches exécutées dans cette partie procèdent au démarrage du service de
 
 ```bash
 
-    - name: DEMARRE DOCKER
+    - name: DEMARRER DOCKER
       ansible.builtin.systemd_service:
         state: started
         name: docker
@@ -113,3 +114,59 @@ Les tâches exécutées dans cette partie procèdent au démarrage du service de
 
 **Figure 04 : Test de vérification des dépendances do Docker**<br>
 ![Test de démarrage de Docker.](img/Ansible_plyabook_docker_str_test.png)
+
+
+Voici le contenu intégral de la version finale du playbook (jusqu'à ce niveau du projet).
+
+```bash
+ Playbook : deploy.yaml
+
+# Contenu du fichier 
+
+---
+- name: "NGinx, PHP et MySqL installation avec Docker"
+  hosts: Web
+  become: true
+  vars:
+    ansible_sudo_pass: "egeorges*1"
+  tasks:
+    - name: INSTALLER LES DEPENDANCES DOCKER
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+        update_cache: yes
+      tags: docker-dep
+
+    - name: AJOUT CLE GPG DE DOCKER
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      tags: docker-dep
+
+    - name: AJOUT DEPOT APT DE DOCKER
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
+        state: present
+      tags: docker-dep
+
+    - name: INSTALL DOCKER / DOCKER-COMPOSE
+      apt:
+        name:
+          - docker-ce
+          - docker-compose-plugin
+        state: present
+        update_cache: yes
+      tags: docker-ins
+
+    - name: DEMARRER DOCKER
+      ansible.builtin.systemd_service:
+        state: started
+        name: docker
+      tags: docker-str
+
+```
+

@@ -355,3 +355,57 @@ Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
 2026-07-12 07:07:50,020 p=6688 u=deploy n=ansible INFO| ok: [srv-mysql-1]
 2026-07-12 07:07:50,023 p=6688 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
 2026-07-12 07:07:50,024 p=6688 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-12 09:19:25,372 p=7935 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-12 09:19:25,372 p=7935 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-12 09:19:25,373 p=7935 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-12 09:19:25,405 p=7935 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-12 09:19:25,418 p=7935 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-12 09:19:33,751 p=7935 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-12 09:19:33,758 p=7935 u=deploy n=ansible INFO| TASK [DEMARRE DOCKER] **********************************************************************************************
+2026-07-12 09:19:34,995 p=7935 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-12 09:19:35,000 p=7935 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-12 09:19:35,000 p=7935 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-12 09:20:48,775 p=7977 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-12 09:20:48,775 p=7977 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-12 09:20:48,776 p=7977 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-12 09:20:48,808 p=7977 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-12 09:20:48,821 p=7977 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-12 09:20:51,999 p=7977 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-12 09:20:52,005 p=7977 u=deploy n=ansible INFO| TASK [DEMARRER DOCKER] *********************************************************************************************
+2026-07-12 09:20:53,225 p=7977 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-12 09:20:53,227 p=7977 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-12 09:20:53,228 p=7977 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
