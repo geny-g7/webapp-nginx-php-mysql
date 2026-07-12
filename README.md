@@ -194,7 +194,7 @@ Plus tard, nous aurons à créer les fichiers 'index.html' et index.php dans le 
 Une fois ces commandes exécutées, nous avons une structure qui ressemble à la figure ci-après.
 
 **Figure 05 : Présentation de la tructure du projet**<br>
-![Structure du projet.](img/docker_project_directory_structure.png)
+![Structure du projet.](img/project_directory_structure.png)
 
 
 <h4>- Création du fichier d'orchestration 'compose.yaml' </h4>
