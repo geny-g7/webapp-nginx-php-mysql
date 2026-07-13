@@ -269,8 +269,10 @@ nano /etc/hosts
 
 <h4>- Création du fichier de configuration de Ngninx</h4>
 Notre fichier de configuration Nginx aura le contenu suivant.Précisément, nous nous positionnons dans le répertoire efcs_site/conf/, qui est à l'intérieur du dossier de travail. Notre fichier de configuration Nginx aura le contenu suivant.
+
 ```bash
-# Creer le fichier
+
+# Créer le fichier
 nano default.conf
 
 # Contenu du fichier 'default.conf'
@@ -320,3 +322,26 @@ server {
 Avec l'éditeur de texte 'nano', nous créons le fichier default.conf pour configurer le server Nginx. 
 
 <h4>- Création d'un fichier PHP</h4>
+Rendu ici, nous allons créer un fichier index.php dans le répertoire 'efcs_site/html/' de notre structure. Ce fichier nous permettra entre autre de vérifier si la connexion à la BD via PHP est bel et bien réussie ou non.
+pour faire simple, on se positionne dans ce répertoire. Voici le contenu pour notre fichier 'index.php'.
+
+```bash
+# Pour créer le fichier 'index.php
+nano index.php
+
+<!-- Contenu de index.php -->
+<h1>Je teste mon site !</h1>
+<h4>Tentative de connexion au serveur MySQL depuis PHP...</h4>
+<?php
+$db_host = 'mysql';
+$db_user = $_ENV["DB_USERNAME"];
+$db_pass = $_ENV["DB_PASSWORD"];
+$conn = new mysqli($db_host, $db_user, $db_pass);
+
+if ($conn->connect_error) {
+    die("La connexion a échoué: " . $conn->connect_error);
+}
+echo "Connexion réussie à MySQL !";
+?>
+
+```
