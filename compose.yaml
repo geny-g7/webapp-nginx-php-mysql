@@ -3,40 +3,50 @@
 ---
 services:
 
-  proxy:
+  srv-web:
     image: nginx:latest
-    build: './efcs_site/'
     networks:
+      - backend
+      - frontend
     depends_on:
       - php
     ports:
       - "80:80"
     volumes:
-      - ./srv_nginx/conf/default.conf:/etc/conf.d/default.conf
+      - ./efcs_site/html:/usr/share/nginx/html
+      - ./efcs_site/conf/default.conf:/etc/nginx/conf.d/default.conf
+      - ./efcs_site/conf/nginx.conf:/etc/nginx/nginx.conf
 
   php:
-    image: php:8.2 FPF
-    build: './php/'
+    image: php:8.3-fpm-alpine
     networks:
       - backend
-      - frontend
+    environment:
+      - DB_USERNAME=root
+      - DB_PASSWORD=rootpassword
+      #- DB_USER_NAME: $_ENV["DB_USER_NAME"]
+      #- DB_USER_PASS: $_ENV["DB_USER_PASS"]
     ports:
       - '9000:9000'
     volumes:
-      - ./efcs_site/html/:usr/local/nginx/htdocs/
+      - ./efcs_site/html:/usr/share/nginx/html
 
   mysql:
     image: mysql:latest
-    build: './mysql/'
+    #build: './mysql/'
+    restart: always
+    environment:
+      #MYSQL_ROOT_PASSWORD: my_efcs_root_password
+      - MYSQL_ROOT_PASSWORD=rootpassword
     networks:
       - net_data
     ports:
       - '3306:3306'
     volumes:
-      - ./efcs_site/html/:usr/local/nginx/htdocs/
+      - mysql_db_storage:/var/lib/mysql
 
   volumes:
-    - ./efcs_site/html/:usr/local/nginx/htdocs/
+    - mysql_db_storage
 
   networks:
     backend:

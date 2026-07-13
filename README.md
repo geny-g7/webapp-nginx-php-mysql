@@ -177,7 +177,8 @@ Voici le contenu intégral de la version finale du playbook (jusqu'à ce niveau 
 Le point essentiel dans cette étape consiste à créer le fichier d'orchestration. Mais juste avant, nous allons créer les dossier nécessaires pour mettre en place la structure du projet. Nous nous positionnerons dans le dossier racine du projet : efcs_webapp.C'est d'ailleurs l'espace où a été créé le playbook. Nous allons créer 4 dossiers principaux : 'efcs_site', 'mysql', 'php' et 'srv_nginx'. Un dossier html sera créé à l'intérieur de efcs_site tandis qu'un autre dossier 'conf' sera  à son tour dans srv_nginx. Les commandes à exécuter sont les suivantes : 
 
 ```bash
-# Créer le dossier 'html'. <br>Avec le paramètre '-p', le dossier parent (efcs_site) sera créé aussi au cas où il n'existe pas. 
+# Créer le dossier 'html' dans le efcs_site/. 
+# Avec le paramètre '-p', le dossier parent (efcs_site) sera créé aussi au cas où il n'existe pas. 
 mkdir -p efcs_site/html
 
 # Créer le dossier 'mysql' dans le dossier courant.
@@ -186,7 +187,8 @@ mkdir mysql
 # Créer le dossier 'php' dans le dossier courant.
 mkdir php
 
-# Créer le dossier 'conf' dans le dossier srv_nginx. <br>Avec le paramètre '-p', le dossier parent (srv_nginx) sera créé aussi au cas où il n'existe pas.
+# Créer le dossier 'conf' dans le dossier srv_nginx. 
+# Comme pour le premier cas, le paramètre '-p' va forcer la création du dossier parent (srv_nginx) au cas où il n'existe pas.
 mkdir -p srv_nginx/conf
 
 ```
@@ -248,9 +250,19 @@ services:
 
 ```
 
-# <h4>- Configuration de variables d'environnement </h4>
+<h4>- Mise en place de variables d'environnement </h4>
+Nous ferons usage de certaines variables qui nous servirons pour la connexion à la bd. Dans la configuration de MySQL et PHP, nous utiliserons quelques-uns (ex: DB_USERNAME, DB_PASSWORD ou MYSQL_ROOT_PASSWORD) pour la connexion à la base de données'. Nous allons aussi modifier le fichier 'compose.yaml' pour y ajouter un volume pour la persistence de données. La version finale du fichier compose.yaml reflète de tels changements.
+
 # <h4>- Modification du fichier /etc/hosts </h4>
+À présent, le poste local de gestion doit être configuré pour qu'un client, tel qu'un navigateur, puisse reconnaître les noms de domaine du site lors d'une requête http. Pour cela, nous allons modifier le fichier hosts du répertoire /etc/ de notre machine de gestion. Nous allons y ajouter l'adresse IP de la machine qui va rouler le site. Et à cette adresse IP, nous devons aussi associer le nom de domaine du site (dans notre cas : efcs.com et www.efcs.com). Avec l'éditeur de texte nano, la commande suivante nous permet d'ouvrir le fichier hosts pour de telles modifications.
 
+```bash
+nano /etc/hosts
+# Ligne à ajouter pour notre site : 
+10.100.2.40 efcs.com www.efcs.com
 
+```
+**Figure 06 : Fichier /etc/hosts après modifications**<br>
+![Fichier hosts.](img/local_machine_hosts_file.png)
 
 
