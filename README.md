@@ -267,7 +267,7 @@ nano /etc/hosts
 
 <h3>4 - Configuration du site</h3>
 
-<h4>- Création du fichier de configuration de Ngninx</h4>
+<h4>- Création du fichier de configuration de Nginx</h4>
 Notre fichier de configuration Nginx aura le contenu suivant.Précisément, nous nous positionnons dans le répertoire efcs_site/conf/, qui est à l'intérieur du dossier de travail. Notre fichier de configuration Nginx aura le contenu suivant.
 
 ```bash
@@ -318,9 +318,6 @@ server {
 
 ```
 
-<h4>- Création du fichier de configuration de Ngninx</h4>
-Avec l'éditeur de texte 'nano', nous créons le fichier default.conf pour configurer le server Nginx. 
-
 <h4>- Création d'un fichier PHP</h4>
 Rendu ici, nous allons créer un fichier index.php dans le répertoire 'efcs_site/html/' de notre structure. Ce fichier nous permettra entre autre de vérifier si la connexion à la BD via PHP est bel et bien réussie ou non.
 pour faire simple, on se positionne dans ce répertoire. Voici le contenu pour notre fichier 'index.php'.
@@ -343,5 +340,23 @@ if ($conn->connect_error) {
 }
 echo "Connexion réussie à MySQL !";
 ?>
+
+```
+
+<h4>- Détails additionnels : prise en charges des volumes et autres</h4>
+À cette étape précise, notons que tous les éléments sont en place pour faire rouler notre site sur notre poste local. Nous avons plusieurs montages dans notre structure pour prendre en charges les volumes. Notre fichier d'orchestration 'compose.yaml' fait bien état, entre autres, d'un volume de stockage que nous utilisons avec le service 'mysql' pour persister les données de la BD. Plûtôt que d'utiliser une image pour PHP dans le compose.yaml, nous avons créé un fichier Dockerfile pour gérer cet aspect du travail. Ce fichier est dans le dossier 'php/' qui réside dans le répertoire du projet. En voici le contenu : 
+
+```bash
+
+# Dockerfile
+# Utilise une petite image
+FROM php:fpm-alpine
+
+# Mets a jour le serveur
+RUN apk update; \
+    apk upgrade;
+
+# Install mysqli extension  permettant d'utiliser la bd dans PHP
+RUN docker-php-ext-install mysqli
 
 ```
