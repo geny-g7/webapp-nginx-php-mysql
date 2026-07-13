@@ -264,3 +264,59 @@ nano /etc/hosts
 ```
 **Figure 06 : Fichier /etc/hosts après modifications**<br>
 ![Fichier hosts.](img/local_machine_hosts_file3.png)
+
+<h3>4 - Configuration du site</h3>
+
+<h4>- Création du fichier de configuration de Ngninx</h4>
+Notre fichier de configuration Nginx aura le contenu suivant.Précisément, nous nous positionnons dans le répertoire efcs_site/conf/, qui est à l'intérieur du dossier de travail. Notre fichier de configuration Nginx aura le contenu suivant.
+```bash
+# Creer le fichier
+nano default.conf
+
+# Contenu du fichier 'default.conf'
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  efcs.info www.efcs.info;
+
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    root   /usr/share/nginx/html;
+    index  index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+    
+    # PHP-FPM Configuration pour php
+    location ~\.php$ {
+        try_files $uri = 404;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass php:9000;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param REQUEST_URI $request_uri;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param PATH_INFO $fastcgi_path_info;
+    }
+
+    # deny access to .htaccess files
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+}
+
+```
+
+<h4>- Création du fichier de configuration de Ngninx</h4>
+Avec l'éditeur de texte 'nano', nous créons le fichier default.conf pour configurer le server Nginx. 
+
+<h4>- Création d'un fichier PHP</h4>
