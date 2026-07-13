@@ -54,4 +54,4 @@ services:
     net_data:
 
   volumes:
-    - mysql_db_storage
+    mysql_db_storage:
