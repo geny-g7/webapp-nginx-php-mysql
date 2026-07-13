@@ -42,16 +42,15 @@ services:
       #MYSQL_ROOT_PASSWORD: my_efcs_root_password
       - MYSQL_ROOT_PASSWORD=rootpassword
     networks:
-      - net_data
+      - backend # Même networks que Nginx et PHP
     ports:
       - '3306:3306'
     volumes:
       - mysql_db_storage:/var/lib/mysql
 
-  networks:
-    backend:
-    frontend:
-    net_data:
+networks:
+  backend:
+  frontend:
 
-  volumes:
-    mysql_db_storage:
+volumes:
+  mysql_db_storage:

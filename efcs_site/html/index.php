@@ -11,5 +11,5 @@ $conn = new mysqli($db_host, $db_user, $db_pass);
 if ($conn->connect_error) {
     die("La connexion a échoué: " . $conn->connect_error);
 }
-echo "Connexion réussie à MySQL !";
+echo  "Connexion réussie à MySQL !";
 ?>
