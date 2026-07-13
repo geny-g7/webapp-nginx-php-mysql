@@ -254,15 +254,13 @@ services:
 Nous ferons usage de certaines variables qui nous servirons pour la connexion à la bd. Dans la configuration de MySQL et PHP, nous utiliserons quelques-uns (ex: DB_USERNAME, DB_PASSWORD ou MYSQL_ROOT_PASSWORD) pour la connexion à la base de données'. Nous allons aussi modifier le fichier 'compose.yaml' pour y ajouter un volume pour la persistence de données. La version finale du fichier compose.yaml reflète de tels changements.
 
 # <h4>- Modification du fichier /etc/hosts </h4>
-À présent, le poste local de gestion doit être configuré pour qu'un client, tel qu'un navigateur, puisse reconnaître les noms de domaine du site lors d'une requête http. Pour cela, nous allons modifier le fichier hosts du répertoire /etc/ de notre machine de gestion. Nous allons y ajouter l'adresse IP de la machine qui va rouler le site. Et à cette adresse IP, nous devons aussi associer le nom de domaine du site (dans notre cas : efcs.com et www.efcs.com). Avec l'éditeur de texte nano, la commande suivante nous permet d'ouvrir le fichier hosts pour de telles modifications.
+À présent, le poste local de gestion doit être configuré pour qu'un client, tel qu'un navigateur, puisse reconnaître les noms de domaine du site lors d'une requête http. Pour cela, nous allons modifier le fichier hosts du répertoire /etc/ de notre machine de gestion. Nous allons y ajouter l'adresse IP de la machine qui va rouler le site. Et à cette adresse IP, nous devons aussi associer le nom de domaine du site (dans notre cas :<a href='efcs.com'>efcs.info</a> et www.efcs.info). Avec l'éditeur de texte nano, la commande suivante nous permet d'ouvrir le fichier hosts pour de telles modifications.
 
 ```bash
 nano /etc/hosts
 # Ligne à ajouter pour notre site : 
-10.100.2.40 efcs.com www.efcs.com
+10.100.2.40 efcs.info www.efcs.info
 
 ```
 **Figure 06 : Fichier /etc/hosts après modifications**<br>
-![Fichier hosts.](img/local_machine_hosts_file.png)
-
-
+![Fichier hosts.](img/local_machine_hosts_file3.png)
