@@ -11,5 +11,7 @@ $conn = new mysqli($db_host, $db_user, $db_pass);
 if ($conn->connect_error) {
     die("La connexion a échoué: " . $conn->connect_error);
 }
-echo  "Connexion réussie à MySQL !";
+
+date_default_timezone_set('America/New_York');
+echo  "Connexion réussie à MySQL ! Date : " . date('Y-M-d H:i:s');
 ?>

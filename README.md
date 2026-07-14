@@ -348,6 +348,9 @@ echo "Connexion réussie à MySQL !";
 
 ```bash
 
+# Créer le fichier
+nano Dockerfile
+
 # Dockerfile
 # Utilise une petite image
 FROM php:fpm-alpine
@@ -360,3 +363,38 @@ RUN apk update; \
 RUN docker-php-ext-install mysqli
 
 ```
+
+<h3>5 - Compléter le Playbook Ansible</h3>
+
+<h4>- Création de la structure des répertoires sur le serveur</h4>
+**Figure 07 : Copie des Répertoires sur la machine distante**<br>
+![Copie dossiers.](img/playbook_folder_copy_test.png)
+
+<h4>- Copie des fichiers sur le serveur pour Docker Compose</h4>
+**Figure 08 : Copie des Fichiers**<br>
+![Copie des Fichiers.](img/playbook_file_copy_test.png)
+
+<h4>- Configuration : Lancement du système avec Docker Compose v2</h4>
+**Figure 09 : Docker compose up**<br>
+![Docker compose up.](img/playbook_docker_compose_up_test.png)
+
+**Figure 10 : Docker compose ps**<br>
+![Docker ps.](img/playbook_docker_compose_ps_test.png)
+
+**Figure 11 : Docker compose down**<br>
+![Docker down.](img/playbook_docker_compose_down_test.png)
+
+**Figure 12 : Page du site**<br>
+![Page du site.](img/site_page_test.png)
+
+
+
+<h4>Références</h4>
+
+https://share.google/aimode/xKUOXmR9hqiHvAqol <br>
+
+https://docs.ansible.com/projects/ansible/latest/collections/community/docker/index.html#description <br>
+
+https://docs.ansible.com/projects/ansible/latest/collections/community/docker/index.html#description <br>
+
+https://docs.ansible.com/projects/ansible/latest/collections/community/docker/docker_container_module.html#ansible-collections-community-docker-docker-container-module <br>

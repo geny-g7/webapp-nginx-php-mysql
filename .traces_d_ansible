@@ -409,3 +409,736 @@ Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
 2026-07-12 09:20:53,225 p=7977 u=deploy n=ansible INFO| ok: [srv-mysql-1]
 2026-07-12 09:20:53,227 p=7977 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
 2026-07-12 09:20:53,228 p=7977 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 19:42:21,595 p=20069 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 19:42:21,595 p=20069 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 19:42:21,597 p=20069 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 19:42:21,640 p=20069 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 19:42:21,658 p=20069 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 19:42:30,125 p=20069 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 19:42:30,130 p=20069 u=deploy n=ansible INFO| TASK [CREATE PROJECT BASE FOLDER] **********************************************************************************
+2026-07-13 19:42:30,961 p=20069 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 19:42:30,966 p=20069 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 19:42:30,966 p=20069 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 20:06:48,218 p=20385 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 20:06:48,219 p=20385 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 20:06:48,220 p=20385 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 20:06:48,263 p=20385 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 20:06:48,275 p=20385 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 20:06:56,534 p=20385 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:06:56,540 p=20385 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (efcs_webapp/efcs_site/html/)] *********************************************************
+2026-07-13 20:06:57,359 p=20385 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:06:57,369 p=20385 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (efcs_webapp/efcs_site/conf/)] *********************************************************
+2026-07-13 20:06:58,012 p=20385 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 20:06:58,020 p=20385 u=deploy n=ansible INFO| TASK [CREATE PROJECT DIRECTORY (efcs_webapp/php)] ******************************************************************
+2026-07-13 20:06:58,663 p=20385 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 20:06:58,669 p=20385 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 20:06:58,669 p=20385 u=deploy n=ansible INFO| srv-mysql-1                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 20:07:49,248 p=20439 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 20:07:49,248 p=20439 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 20:07:49,249 p=20439 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 20:07:49,293 p=20439 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 20:07:49,305 p=20439 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 20:07:51,307 p=20439 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:07:51,315 p=20439 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (efcs_webapp/efcs_site/html/)] *********************************************************
+2026-07-13 20:07:52,141 p=20439 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:07:52,150 p=20439 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (efcs_webapp/efcs_site/conf/)] *********************************************************
+2026-07-13 20:07:52,805 p=20439 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:07:52,813 p=20439 u=deploy n=ansible INFO| TASK [CREATE PROJECT DIRECTORY (efcs_webapp/php)] ******************************************************************
+2026-07-13 20:07:53,469 p=20439 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:07:53,474 p=20439 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 20:07:53,475 p=20439 u=deploy n=ansible INFO| srv-mysql-1                : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 20:42:48,296 p=3907 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 20:42:48,297 p=3907 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 20:42:48,298 p=3907 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 20:42:48,345 p=3907 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 20:42:48,363 p=3907 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 20:42:51,659 p=3907 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:42:51,666 p=3907 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 20:42:53,186 p=3907 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 20:42:53,189 p=3907 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 20:42:53,189 p=3907 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 20:43:22,960 p=3943 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 20:43:22,960 p=3943 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 20:43:22,962 p=3943 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 20:43:23,006 p=3943 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 20:43:23,018 p=3943 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 20:43:25,022 p=3943 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:43:25,029 p=3943 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 20:43:26,587 p=3943 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:43:26,590 p=3943 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 20:43:26,590 p=3943 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 20:49:08,922 p=3980 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 20:49:08,923 p=3980 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 20:49:08,924 p=3980 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 20:49:08,967 p=3980 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 20:49:08,979 p=3980 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 20:49:12,171 p=3980 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:49:12,178 p=3980 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 20:49:13,702 p=3980 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 20:49:13,706 p=3980 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 20:49:13,707 p=3980 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 21:07:40,715 p=4107 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 21:07:40,716 p=4107 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 21:07:40,717 p=4107 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 21:07:40,763 p=4107 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 21:07:40,775 p=4107 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 21:07:44,046 p=4107 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:07:44,053 p=4107 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 21:07:45,571 p=4107 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:07:45,579 p=4107 u=deploy n=ansible INFO| TASK [COPY NGINX CONFIG FILE FOLDER (/.../conf/default.conf)] ******************************************************
+2026-07-13 21:07:46,956 p=4107 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 21:07:46,966 p=4107 u=deploy n=ansible INFO| TASK [COPY PHP DOCKER-FILE IN PHP FOLDER (/.../php/Dockerfile)] ****************************************************
+2026-07-13 21:07:48,171 p=4107 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 21:07:48,180 p=4107 u=deploy n=ansible INFO| TASK [COPY COMPOSE FILE IN APP ROOT FOLDER (/.../efcs_webapp/compose.yaml)] ****************************************
+2026-07-13 21:07:49,386 p=4107 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 21:07:49,390 p=4107 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 21:07:49,390 p=4107 u=deploy n=ansible INFO| srv-mysql-1                : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 21:09:02,629 p=4182 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 21:09:02,630 p=4182 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 21:09:02,631 p=4182 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 21:09:02,677 p=4182 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 21:09:02,688 p=4182 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 21:09:05,887 p=4182 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:09:05,895 p=4182 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 21:09:07,443 p=4182 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:09:07,451 p=4182 u=deploy n=ansible INFO| TASK [COPY NGINX CONFIG FILE FOLDER (/.../conf/default.conf)] ******************************************************
+2026-07-13 21:09:08,692 p=4182 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:09:08,701 p=4182 u=deploy n=ansible INFO| TASK [COPY PHP DOCKER-FILE IN PHP FOLDER (/.../php/Dockerfile)] ****************************************************
+2026-07-13 21:09:09,922 p=4182 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:09:09,929 p=4182 u=deploy n=ansible INFO| TASK [COPY COMPOSE FILE IN APP ROOT FOLDER (/.../efcs_webapp/compose.yaml)] ****************************************
+2026-07-13 21:09:11,164 p=4182 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:09:11,168 p=4182 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 21:09:11,169 p=4182 u=deploy n=ansible INFO| srv-mysql-1                : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 21:22:07,203 p=4267 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 21:22:07,203 p=4267 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 21:22:07,204 p=4267 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 21:22:07,243 p=4267 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 21:22:07,254 p=4267 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 21:22:10,553 p=4267 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:10,560 p=4267 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (/.../efcs_webapp/efcs_site/html/)] ****************************************************
+2026-07-13 21:22:11,397 p=4267 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:11,406 p=4267 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (/.../efcs_webapp/efcs_site/conf/)] ****************************************************
+2026-07-13 21:22:12,065 p=4267 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:12,073 p=4267 u=deploy n=ansible INFO| TASK [CREATE PROJECT PHP DIRECTORY (/.../efcs_webapp/php/)] ********************************************************
+2026-07-13 21:22:12,736 p=4267 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:12,739 p=4267 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 21:22:12,739 p=4267 u=deploy n=ansible INFO| srv-mysql-1                : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 21:22:45,192 p=4309 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 21:22:45,192 p=4309 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 21:22:45,193 p=4309 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 21:22:45,231 p=4309 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 21:22:45,242 p=4309 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 21:22:47,245 p=4309 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:47,253 p=4309 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 21:22:48,789 p=4309 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:48,798 p=4309 u=deploy n=ansible INFO| TASK [COPY NGINX CONFIG FILE FOLDER (/.../conf/default.conf)] ******************************************************
+2026-07-13 21:22:50,025 p=4309 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:50,034 p=4309 u=deploy n=ansible INFO| TASK [COPY PHP DOCKER-FILE IN PHP FOLDER (/.../php/Dockerfile)] ****************************************************
+2026-07-13 21:22:51,258 p=4309 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:51,267 p=4309 u=deploy n=ansible INFO| TASK [COPY COMPOSE FILE IN APP ROOT FOLDER (/.../efcs_webapp/compose.yaml)] ****************************************
+2026-07-13 21:22:52,493 p=4309 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 21:22:52,495 p=4309 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 21:22:52,495 p=4309 u=deploy n=ansible INFO| srv-mysql-1                : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:41:02,696 p=5956 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:41:02,697 p=5956 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:41:02,698 p=5956 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:41:02,748 p=5956 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:41:02,765 p=5956 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:41:11,148 p=5956 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:41:11,154 p=5956 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (/.../efcs_webapp/efcs_site/html/)] ****************************************************
+2026-07-13 22:41:11,988 p=5956 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:41:11,999 p=5956 u=deploy n=ansible INFO| TASK [CREATE PROJECT FOLDER (/.../efcs_webapp/efcs_site/conf/)] ****************************************************
+2026-07-13 22:41:12,655 p=5956 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:41:12,663 p=5956 u=deploy n=ansible INFO| TASK [CREATE PROJECT PHP DIRECTORY (/.../efcs_webapp/php/)] ********************************************************
+2026-07-13 22:41:13,316 p=5956 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:41:13,318 p=5956 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:41:13,320 p=5956 u=deploy n=ansible INFO| srv-mysql-1                : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:43:28,966 p=6008 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:43:28,967 p=6008 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:43:28,968 p=6008 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:43:29,010 p=6008 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:43:29,021 p=6008 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:43:32,227 p=6008 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:43:32,234 p=6008 u=deploy n=ansible INFO| TASK [COPY FILE IN HTML FOLDER (/.../html/index.php)] **************************************************************
+2026-07-13 22:43:33,797 p=6008 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:43:33,807 p=6008 u=deploy n=ansible INFO| TASK [COPY NGINX CONFIG FILE FOLDER (/.../conf/default.conf)] ******************************************************
+2026-07-13 22:43:35,054 p=6008 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:43:35,063 p=6008 u=deploy n=ansible INFO| TASK [COPY PHP DOCKER-FILE IN PHP FOLDER (/.../php/Dockerfile)] ****************************************************
+2026-07-13 22:43:36,281 p=6008 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:43:36,291 p=6008 u=deploy n=ansible INFO| TASK [COPY COMPOSE FILE IN APP ROOT FOLDER (/.../efcs_webapp/compose.yaml)] ****************************************
+2026-07-13 22:43:37,515 p=6008 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:43:37,517 p=6008 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:43:37,518 p=6008 u=deploy n=ansible INFO| srv-mysql-1                : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:46:07,618 p=6094 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:46:07,619 p=6094 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:46:07,620 p=6094 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:46:07,661 p=6094 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:46:07,672 p=6094 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:46:10,876 p=6094 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:46:10,882 p=6094 u=deploy n=ansible INFO| TASK [DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)] ***********************************************
+2026-07-13 22:46:12,784 p=6094 u=deploy n=ansible ERROR| [ERROR]: Task failed: Module failed: Cannot find Compose file "docker-compose.yml" relative to project directory "/home/deploy/efcs_webapp"
+Origin: /home/deploy/efcs_webapp/deploy.yaml:141:7
+
+139     # mind the _v2 suffix
+140     # Ref : https://stackoverflow.com/questions/62452039/how-to-run-docker-compose-commands-with-ansible#62452959
+141     - name: DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)
+          ^ column 7
+
+
+2026-07-13 22:46:12,785 p=6094 u=deploy n=ansible INFO| fatal: [srv-mysql-1]: FAILED! => {"changed": false, "msg": "Cannot find Compose file \"docker-compose.yml\" relative to project directory \"/home/deploy/efcs_webapp\""}
+2026-07-13 22:46:12,788 p=6094 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:46:12,788 p=6094 u=deploy n=ansible INFO| srv-mysql-1                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:49:23,409 p=6142 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:49:23,409 p=6142 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:49:23,411 p=6142 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:49:23,453 p=6142 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:49:23,464 p=6142 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:49:26,757 p=6142 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:49:26,763 p=6142 u=deploy n=ansible INFO| TASK [DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)] ***********************************************
+2026-07-13 22:50:36,613 p=6142 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 22:50:36,619 p=6142 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:50:36,619 p=6142 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:54:48,263 p=6286 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:54:48,264 p=6286 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:54:48,265 p=6286 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:54:48,306 p=6286 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:54:48,318 p=6286 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:54:52,064 p=6286 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:54:52,070 p=6286 u=deploy n=ansible INFO| TASK [STOP DOCKER-COMPOSE ORCHESTRATION STACK (docker compose down)] ***********************************************
+2026-07-13 22:54:53,449 p=6286 u=deploy n=ansible ERROR| [ERROR]: Task failed: Module failed: Cannot find Compose file "docker-compose.yml" relative to project directory "/home/deploy/efcs_webapp"
+Origin: /home/deploy/efcs_webapp/deploy.yaml:157:7
+
+155     # mind the _v2 suffix
+156
+157     - name: STOP DOCKER-COMPOSE ORCHESTRATION STACK (docker compose down)
+          ^ column 7
+
+
+2026-07-13 22:54:53,450 p=6286 u=deploy n=ansible INFO| fatal: [srv-mysql-1]: FAILED! => {"changed": false, "msg": "Cannot find Compose file \"docker-compose.yml\" relative to project directory \"/home/deploy/efcs_webapp\""}
+2026-07-13 22:54:53,452 p=6286 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:54:53,453 p=6286 u=deploy n=ansible INFO| srv-mysql-1                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:58:13,053 p=6418 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:58:13,054 p=6418 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:58:13,055 p=6418 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:58:13,097 p=6418 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:58:13,108 p=6418 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:58:16,570 p=6418 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:58:16,576 p=6418 u=deploy n=ansible INFO| TASK [STOP DOCKER-COMPOSE ORCHESTRATION STACK (docker compose down)] ***********************************************
+2026-07-13 22:58:20,119 p=6418 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 22:58:20,122 p=6418 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:58:20,123 p=6418 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 22:58:52,321 p=6454 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 22:58:52,322 p=6454 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 22:58:52,323 p=6454 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 22:58:52,364 p=6454 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 22:58:52,376 p=6454 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 22:58:54,381 p=6454 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 22:58:54,389 p=6454 u=deploy n=ansible INFO| TASK [DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)] ***********************************************
+2026-07-13 22:58:58,083 p=6454 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 22:58:58,086 p=6454 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 22:58:58,086 p=6454 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:01:57,276 p=6513 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:01:57,277 p=6513 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:01:57,278 p=6513 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:01:57,320 p=6513 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:01:57,331 p=6513 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:02:00,814 p=6513 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:02:00,820 p=6513 u=deploy n=ansible INFO| TASK [STOP DOCKER-COMPOSE ORCHESTRATION STACK (docker compose down)] ***********************************************
+2026-07-13 23:02:04,200 p=6513 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 23:02:04,204 p=6513 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:02:04,204 p=6513 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:04:36,860 p=6571 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:04:36,861 p=6571 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:04:36,862 p=6571 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:04:36,903 p=6571 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:04:36,915 p=6571 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:04:40,168 p=6571 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:04:40,174 p=6571 u=deploy n=ansible INFO| TASK [STOP DOCKER-COMPOSE ORCHESTRATION STACK (docker compose down)] ***********************************************
+2026-07-13 23:04:41,897 p=6571 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:04:41,900 p=6571 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:04:41,902 p=6571 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:06:11,499 p=6622 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:06:11,499 p=6622 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:06:11,500 p=6622 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:06:11,542 p=6622 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:06:11,553 p=6622 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:06:14,754 p=6622 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:06:14,760 p=6622 u=deploy n=ansible INFO| TASK [DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)] ***********************************************
+2026-07-13 23:06:18,336 p=6622 u=deploy n=ansible INFO| changed: [srv-mysql-1]
+2026-07-13 23:06:18,341 p=6622 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:06:18,341 p=6622 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:06:44,200 p=6651 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:06:44,200 p=6651 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:06:44,201 p=6651 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:06:44,242 p=6651 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:06:44,253 p=6651 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:06:46,468 p=6651 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:06:46,474 p=6651 u=deploy n=ansible INFO| TASK [DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)] ***********************************************
+2026-07-13 23:06:48,661 p=6651 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:06:48,668 p=6651 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:06:48,668 p=6651 u=deploy n=ansible INFO| srv-mysql-1                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:10:37,632 p=6836 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:10:37,633 p=6836 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:10:37,634 p=6836 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:10:37,676 p=6836 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:10:37,688 p=6836 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:10:41,201 p=6836 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:10:41,209 p=6836 u=deploy n=ansible INFO| TASK [Run docker compose ps] ***************************************************************************************
+2026-07-13 23:10:42,034 p=6836 u=deploy n=ansible ERROR| [ERROR]: Task failed: Module failed: Unable to change directory before execution: [Errno 2] No such file or directory: b'/path/to/your/compose/project'
+Origin: /home/deploy/efcs_webapp/deploy.yaml:167:7
+
+165
+166     # Ref : https://share.google/aimode/xKUOXmR9hqiHvAqol
+167     - name: Run docker compose ps
+          ^ column 7
+
+
+2026-07-13 23:10:42,036 p=6836 u=deploy n=ansible INFO| fatal: [srv-mysql-1]: FAILED! => {"changed": false, "changed_when_result": false, "cmd": ["docker", "compose", "ps"], "delta": null, "end": null, "msg": "Unable to change directory before execution.", "start": null, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-07-13 23:10:42,039 p=6836 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:10:42,040 p=6836 u=deploy n=ansible INFO| srv-mysql-1                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:14:52,620 p=6912 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:14:52,621 p=6912 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:14:52,622 p=6912 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:14:52,664 p=6912 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:14:52,678 p=6912 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:14:56,142 p=6912 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:14:56,149 p=6912 u=deploy n=ansible INFO| TASK [Run docker compose ps] ***************************************************************************************
+2026-07-13 23:14:56,958 p=6912 u=deploy n=ansible ERROR| [ERROR]: Task failed: Module failed: Unable to change directory before execution: [Errno 20] Not a directory: b'/home/deploy/efcs_webapp/compose.yaml'
+Origin: /home/deploy/efcs_webapp/deploy.yaml:167:7
+
+165
+166     # Ref : https://share.google/aimode/xKUOXmR9hqiHvAqol
+167     - name: Run docker compose ps
+          ^ column 7
+
+
+2026-07-13 23:14:56,961 p=6912 u=deploy n=ansible INFO| fatal: [srv-mysql-1]: FAILED! => {"changed": false, "changed_when_result": false, "cmd": ["docker", "compose", "ps"], "delta": null, "end": null, "msg": "Unable to change directory before execution.", "start": null, "stderr": "", "stderr_lines": [], "stdout": "", "stdout_lines": []}
+2026-07-13 23:14:56,963 p=6912 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:14:56,964 p=6912 u=deploy n=ansible INFO| srv-mysql-1                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2026-07-13 23:18:01,282 p=6992 u=deploy n=ansible WARNING| [WARNING]: Deprecation warnings can be disabled by setting `deprecation_warnings=False` in ansible.cfg.
+
+2026-07-13 23:18:01,283 p=6992 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_key has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:24:7
+
+22
+23     - name: AJOUT CLE GPG DE DOCKER
+24       apt_key:
+         ^ column 7
+
+
+2026-07-13 23:18:01,284 p=6992 u=deploy n=ansible INFO| [DEPRECATION WARNING]: apt_repository has been deprecated. Use deb822_repository instead. This feature will be removed from ansible-core version 2.25.
+Origin: /home/deploy/efcs_webapp/deploy.yaml:30:7
+
+28
+29     - name: AJOUT DEPOT APT DE DOCKER
+30       apt_repository:
+         ^ column 7
+
+
+2026-07-13 23:18:01,326 p=6992 u=deploy n=ansible INFO| PLAY [NGinx, PHP et MySqL installation avec Docker] ****************************************************************
+2026-07-13 23:18:01,338 p=6992 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************************************************
+2026-07-13 23:18:04,883 p=6992 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:18:04,890 p=6992 u=deploy n=ansible INFO| TASK [Run docker compose ps] ***************************************************************************************
+2026-07-13 23:18:05,944 p=6992 u=deploy n=ansible INFO| ok: [srv-mysql-1]
+2026-07-13 23:18:05,956 p=6992 u=deploy n=ansible INFO| TASK [Print docker compose ps output] ******************************************************************************
+2026-07-13 23:18:06,004 p=6992 u=deploy n=ansible INFO| ok: [srv-mysql-1] => {
+    "compose_ps_result.stdout_lines": [
+        "NAME                    IMAGE             COMMAND                  SERVICE   CREATED          STATUS          PORTS",
+        "efcs_webapp-mysql-1     mysql:latest      \"docker-entrypoint.s…\"   mysql     11 minutes ago   Up 11 minutes   0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp",
+        "efcs_webapp-php-1       efcs_webapp-php   \"docker-php-entrypoi…\"   php       11 minutes ago   Up 11 minutes   0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp",
+        "efcs_webapp-srv-web-1   nginx:latest      \"/docker-entrypoint.…\"   srv-web   11 minutes ago   Up 11 minutes   0.0.0.0:80->80/tcp, [::]:80->80/tcp"
+    ]
+}
+2026-07-13 23:18:06,006 p=6992 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************************************************
+2026-07-13 23:18:06,006 p=6992 u=deploy n=ansible INFO| srv-mysql-1                : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

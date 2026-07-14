@@ -46,3 +46,149 @@
         state: started
         name: docker
       tags: docker-str
+
+# Tâches pour créer les répertoires sur le server (srv-mysql-1)
+    - name: CREATE PROJECT ROOT DIRECTORY (/home/deploy/efcs_webapp/) #(if it does not exist)
+      ansible.builtin.file:
+        path: /home/deploy/efcs_webapp
+        state: directory
+        mode: '0755'
+      tags: root-dir
+
+    - name: CREATE PROJECT FOLDER (/.../efcs_webapp/efcs_site/html/) #(if it does not exist)
+      ansible.builtin.file:
+        path: /home/deploy/efcs_webapp/efcs_site/html
+        state: directory
+        mode: '0755'
+      tags: fldr1
+
+    - name: CREATE PROJECT FOLDER (/.../efcs_webapp/efcs_site/conf/) #(if it does not exist)
+      ansible.builtin.file:
+        path: /home/deploy/efcs_webapp/efcs_site/conf
+        state: directory
+        mode: '0755'
+      tags: fldr1
+
+    - name: CREATE PROJECT PHP DIRECTORY (/.../efcs_webapp/php/) #(if it does not exist)
+      ansible.builtin.file:
+        path: /home/deploy/efcs_webapp/php
+        state: directory
+        mode: '0755'
+      tags: fldr1
+
+    - name: CREATE PROJECT DIRECTORY (efcs_webapp/php) #(if it does not exist)
+      ansible.builtin.file:
+        path: /home/deploy/efcs_webapp/php
+        state: directory
+        mode: '0755'
+      tags: dir-template
+
+# Tâches pour créer les fichiers dans les répertoires respectifs sur le server (srv-mysql-1)
+    - name: COPY FILE IN HTML FOLDER (/.../html/index.php) #(with owner and permissions
+      ansible.builtin.copy:
+        src: efcs_site/html/index.php
+        #src: /home/deploy/efcs_webapp/efcs_site/html/index.php
+        dest: /home/deploy/efcs_webapp/efcs_site/html/index.php
+        owner: deploy
+        group: deploy
+        mode: '0644'
+      tags: flcp1
+
+    - name: COPY NGINX CONFIG FILE FOLDER (/.../conf/default.conf) #(with owner and permissions
+      ansible.builtin.copy:
+        src: efcs_site/conf/default.conf
+        #src: /home/deploy/efcs_webapp/efcs_site/conf/default
+        dest: /home/deploy/efcs_webapp/efcs_site/conf/default.conf
+        owner: deploy
+        group: deploy
+        mode: '0644'
+      tags: flcp1
+
+    - name: COPY PHP DOCKER-FILE IN PHP FOLDER (/.../php/Dockerfile) #(with owner and permissions
+      ansible.builtin.copy:
+        src: php/Dockerfile
+        #src: /home/deploy/efcs_webapp/php/Dockerfile
+        dest: /home/deploy/efcs_webapp/php/Dockerfile
+        owner: deploy
+        group: deploy
+        mode: '0644'
+      tags: flcp1
+
+    - name: COPY COMPOSE FILE IN APP ROOT FOLDER (/.../efcs_webapp/compose.yaml) #(with owner and permissions
+      ansible.builtin.copy:
+        src: compose.yaml
+        #src: /home/deploy/efcs_webapp/compose.yaml
+        dest: /home/deploy/efcs_webapp/compose.yaml
+        owner: deploy
+        group: deploy
+        mode: '0644'
+      tags: flcp1
+
+    - name: COPY FILE IN HTML FOLDER (/.../html/index.php) #(with owner and permissions
+      ansible.builtin.copy:
+        src: efcs_site/html/index.php
+        #src: /home/deploy/efcs_webapp/efcs_site/html/index.php
+        dest: /home/deploy/efcs_webapp/efcs_site/html/index.php
+        owner: deploy
+        group: deploy
+        mode: '0644'
+      tags: file-template
+
+    # Tâches pour lancer le docker-compose orchestration
+    # use files parameter to use multiple docker-compose.yml files
+    # mind the _v2 suffix
+    # Ref : https://stackoverflow.com/questions/62452039/how-to-run-docker-compose-commands-with-ansible#62452959
+    - name: DEPLOY DOCKER-COMPOSE ORCHESTRATION STACK (docker compose up)
+      community.docker.docker_compose_v2:
+        project_src: /home/deploy/efcs_webapp
+        files:
+          - compose.yaml
+          #- compose.prod.yaml
+        state: present
+      tags: docker-up
+
+# Taches pour arrêter les containers sur le hote distant
+  # Tâches pour lancer le docker-compose orchestration
+    # use files parameter to use multiple docker-compose.yml files
+    # mind the _v2 suffix
+
+    - name: STOP DOCKER-COMPOSE ORCHESTRATION STACK (docker compose down)
+      community.docker.docker_compose_v2:
+        project_src: /home/deploy/efcs_webapp
+        files:
+          - compose.yaml
+          #- compose.prod.yaml
+        state: absent
+        remove_volumes: true
+        remove_orphans: true
+      tags: docker-down
+
+    # Ref : https://share.google/aimode/xKUOXmR9hqiHvAqol
+    - name: Run docker compose ps
+      ansible.builtin.command:
+        cmd: docker compose ps
+        chdir: /home/deploy/efcs_webapp
+        #chdir: /home/deploy/efcs_webapp/compose.yaml
+      register: compose_ps_result
+      changed_when: false
+      tags: docker-ps
+
+    # Ref : https://share.google/aimode/xKUOXmR9hqiHvAqol
+    - name: Print docker compose ps output
+      ansible.builtin.debug:
+        var: compose_ps_result.stdout_lines
+      tags: docker-ps
+
+    # Tâces pour gérer les logs de docker
+    # Ref :
+    - name: Fetch the last 25 lines of container logs
+      ansible.builtin.shell:
+        cmd: docker logs --tail 25 my_container_name 2>&1
+      register: docker_log_output
+      changed_when: false
+      tags: docker-logs
+
+    - name: Print logs to terminal
+      ansible.builtin.debug:
+        var: docker_log_output.stdout_lines
+      tags: docker-logs
