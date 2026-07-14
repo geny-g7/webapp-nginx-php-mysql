@@ -367,14 +367,17 @@ RUN docker-php-ext-install mysqli
 <h3>5 - Compléter le Playbook Ansible</h3>
 
 <h4>- Création de la structure des répertoires sur le serveur</h4>
+
 **Figure 07 : Copie des Répertoires sur la machine distante**<br>
 ![Copie dossiers.](img/playbook_folder_copy_test.png)
 
 <h4>- Copie des fichiers sur le serveur pour Docker Compose</h4>
+
 **Figure 08 : Copie des Fichiers**<br>
 ![Copie des Fichiers.](img/playbook_file_copy_test.png)
 
 <h4>- Configuration : Lancement du système avec Docker Compose v2</h4>
+
 **Figure 09 : Docker compose up**<br>
 ![Docker compose up.](img/playbook_docker_compose_up_test.png)
 
